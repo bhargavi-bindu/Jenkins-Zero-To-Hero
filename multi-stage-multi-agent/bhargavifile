@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    echo 'Compiling the Java program...'
+                    sh 'javac HelloWorld.java'
+                }
+            }
+        }
+
+        stage('Run') {
+            steps {
+                script {
+                    echo 'Running the Java program...'
+                    sh 'java HelloWorld'
+                }
+            }
+        }
+    }
+}
